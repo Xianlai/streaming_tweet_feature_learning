@@ -78,9 +78,9 @@ On addition to these basic, one-step type of operations, Spark offers more compl
 As we said, the main advantage of Spark is the RDD. It's fast for iterative algorithm and interactive developing environment. And it's convinient to use those 4 specific purpose libraries if they suit our needs.
 
 # References
-[Apache Spark Documentation](https://spark.apache.org/docs/latest/index.html)
-[Wikipedia: Apache Spark](https://en.wikipedia.org/wiki/Apache_Spark)
-[Apache Spark GitHub Repository](https://github.com/apache/spark)
+[Apache Spark Documentation](https://spark.apache.org/docs/latest/index.html)    
+[Wikipedia: Apache Spark](https://en.wikipedia.org/wiki/Apache_Spark)    
+[Apache Spark GitHub Repository](https://github.com/apache/spark)   
 
 
 
