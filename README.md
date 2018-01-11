@@ -3,7 +3,7 @@
 ![](imgs/tweet_feature_learning.gif)
 
 ## Synopsis
-![](../imgs/logos.png)
+![](imgs/logos.png)
 #### As the diagram showing above, this project implements a pipeline that learns predictive features from streaming tweets and visualizes the result in real-time.
 
 
