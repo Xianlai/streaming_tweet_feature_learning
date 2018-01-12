@@ -47,7 +47,15 @@
 ### To run the notebook:
 The Jupyter notebooks and scripts are implemented and working in docker container run from following docker image. 
 
-1. Run the following command to start a container with the Notebook server listening for HTTP connections on port 8888.
+1. In order to receive Tweets, you will need to add your own Twitter API keys in the [TweetsListener.py](./TweetsListener.py) file. The variables that need to be set are are the top and are as follows:
+```python
+consumer_key    = None  # Replace with your Consumer key
+consumer_secret = None  # Replace with your Consumer secret
+access_token    = None  # Replace with your acces token
+access_secret   = None  # Replace with your access secret
+```
+
+2. Run the following command to start a container with the Notebook server listening for HTTP connections on port 8888.
 
 `docker run -it -v localDir:/home/jovyan -p 8888:8888 xianlai/spark_project`
 
@@ -60,9 +68,9 @@ to login with a token:
     http://localhost:8888/?token=75b0b2062b7e8da090cc16d9581e3b9d98158903fcf8db36
 ```
 
-2. Take note of the authentication token and include it in the URL you visit to access the Notebook server.
+3. Take note of the authentication token and include it in the URL you visit to access the Notebook server.
 
-3. Open `tweet_feature_learning_SparkStreaming.ipynb` and run all cells.
+4. Open `tweet_feature_learning_SparkStreaming.ipynb` and run all cells.
 
 
 ## API Reference

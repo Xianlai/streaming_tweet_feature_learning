@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Implementation of tweets listener based on tweepy API.
+
+Author: Xian Lai
+Date: Nov.15, 2017
+"""
+
 from tweepy import OAuthHandler, API, Stream
 from tweepy.streaming import StreamListener
 import socket
@@ -6,13 +15,17 @@ tracks = ['NBA', 'NFL', 'MLB']  # the topics of tweets to receive
 host   = "172.17.0.2"           # the IP address of local host
 
 
-consumer_key    = "GfUirs5Qb88kcqI67AyIbcCix"
-consumer_secret = "8YJ64NwbywQVAxcYpcHGrmlk9Ahkb5Plv1TOSmdWnjm5poLN4H"
-access_token    = "595598668-i0vBACxNaQtzMlUM7sOhLw2vboynfgwzLjAElJX8"
-access_secret   = "gzV7S4PjD3YBTktgjdBgs9oe5c7a5iaPHN4sl12d1jRAD"
+consumer_key    = "YourConsumerKey"
+consumer_secret = "YourConsumerSecretKey"
+access_token    = "YourAccessToken"
+access_secret   = "YourAccessSecretKey"
 
 class Listener(StreamListener):
 
+    """ This class implements a tweets listener as a wrapper of tweepy API 
+    pulling real time tweets from twitter and forward them to the client 
+    socket provided.
+    """
 
     def __init__(self, csocket, api):
         self.client_socket = csocket
