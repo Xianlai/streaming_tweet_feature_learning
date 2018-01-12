@@ -57,7 +57,9 @@ access_secret   = None  # Replace with your access secret
 
 2. Run the following command to start a container with the Notebook server listening for HTTP connections on port 8888.
 
-`docker run -it -v localDir:/home/jovyan -p 8888:8888 xianlai/spark_project`
+```bash
+docker run -it -v localDir:/home/jovyan -p 8888:8888 xianlai/spark_project
+```
 
 Here `-v localDir:/home/jovyan` allows you to mount a local volume to container and the `localDir` is the directory where you downloaded the above files.
 
