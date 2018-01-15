@@ -65,7 +65,7 @@
         draft       : (0.016483516483516484, 0.171875, 0.1111111111111111, 149.7176)  
         ...  
         ```
-        
+
 - **Visualize results on master machine**:   
     At last we select the tweets and features with higher predictiveness, collect their label, sum of predictiveness and 2 tsne features back onto the master machine and visualize them as a scatter plot. 
 
@@ -82,17 +82,28 @@
 ## Files
 - **tweet_feature_learning_SparkStreaming.ipynb**
     This jupyter notebook contains the code receiving tweets from socket, learn features and their stats and visualize selected tweets using learned features.
+
 - **TweetsListener.py**
     This python script pulls realtime tweets from tweepy API and forward it to the assigned TCP connect.(If you are not using docker container, you need to modify the IPaddress information in this file as well as in tweet_feature_learning_SparkStreaming.ipynb to make the streaming work.)
+
 - **StreamingPlot.py**
     This python script implements the streaming plotting class which generate a scatter plotting and keeps updating the plotting with new plotting data source.
-- **pyspark_installation_guide.md**
-    This markdown file contains guided steps on how to install Spark and pyspark.
-- **Spark_overview.md**
-    This markdown file briefly introduces what is Spark and the functionalities of it.
+
 - **logs.txt**
     This text file is generated in tweet_feature_learning_SparkStreaming.ipynb to save intermediate and final analysis result.
 
+- **Spark_overview.md**
+    This markdown file briefly introduces what is Spark and the functionalities of it.
+
+- **Spark_installation_guide.md**
+    This markdown file contains guiding steps on how to install Spark, pyspark and how to run them either in the shell or as an application.
+
+- **Spark_AWS_cluster_guide.md**
+    This markdown file contains guiding steps on how to set up a AWS cluster and how to run Spark on it.
+
+- **Spark_machine_learning_pipeline.ipynb**
+    This jupyter notebook implements an example using Spark machine learning API to classify whether online news are popular or not.
+    
 
 ## To run the notebook:
 The Jupyter notebooks and scripts are implemented and working in docker container run from docker image `xianlai/spark_project`. 
