@@ -19,13 +19,15 @@
     
     1. preprocess each tweet into a label and a list of clean words which contains only numbers and alphabets.
     
-        example cleaned tweets after preprocessing:
+        ```
+        example cleaned tweets after preprocessing:   
         tag:1, words:['rt', 'chargersrhenne', 'this', 'guy', ...],    
         tag:0, words:['rt', 'debruynekev', 'amp', 'ilkayguendogan', ...],    
         tag:0, words:['rt', 'commissioner', 'adam', 'silver', ...],    
         tag:0, words:['rt', 'spurs', 'all', 'star', ...],    
         tag:0, words:['nbaallstar', 'karlanthony', 'towns', 'nbavote', ...],   
         ...    
+        ```
 
     2. count the frequencies of words in all tweets and take the top 5000 most frequent ones as features.
     
@@ -146,6 +148,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Contact
-Xian Lai
-Data Analytics, CIS @ Fordham University
-XianLaaai@gmail.com
+Xian Lai   
+Data Analytics, CIS @ Fordham University   
+XianLaaai@gmail.com   
