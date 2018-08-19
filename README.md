@@ -31,7 +31,7 @@ In this project, a life tweets streaming are pulled from Tweeter API. 300 most p
 ### I. Receive and clean streaming tweets:  
 ### I. 接收和清理推特数据流:
 
-1. Running the [TweetsListener.py](https://github.com/Xianlai/streaming_tweet_feature_learning) script in the background, a tweets stream with any one of 3 tracks-"NBA", "NFL" and "MBL" are pulled from Tweeter API. 
+1. Running the [TweetsListener.py](https://github.com/Xianlai/streaming_tweet_feature_learning/blob/master/TweetsListener.py) script in the background, a tweets stream with any one of 3 tracks-"NBA", "NFL" and "MBL" are pulled from Tweeter API. 
 
     ```python
     >>> Input:
