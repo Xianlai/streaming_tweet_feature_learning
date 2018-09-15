@@ -204,28 +204,27 @@ These words are counted and top 5000 most frequent words are collected as featur
 2. calculate the conditional probability given label and the predictiveness of each feature word.
      
     **p(feature|tag)**:   
-    Since all the feature values are either 0 or 1, we can easily get the probability of one feature conditioned on any tag by summing up the values of this column under corresponding tag and divide it by the total count of tweets under this tag.
+    Since all the feature values are either 0 or 1, we can easily get the probability of one feature conditioned on any tag by counting the tweets containing this feature under corresponding tag and divide it by the total count of tweets under this tag.
+
+    <a href="http://www.codecogs.com/eqnedit.php?latex=cp_0&space;=&space;\frac{count(feature=1,&space;tag=0)}{count(tag=0)}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?cp_0&space;=&space;\frac{count(feature=1,&space;tag=0)}{count(tag=0)}" title="cp_0 = \frac{count(feature=1, tag=0)}{count(tag=0)}" /></a>
+
 
     **predictiveness**:  
     Then we calculate the predictiveness of each feature from this dataset. The predictiveness of one feature quantifies how well can a feature discriminate the label of a tweet from other 2 labels.
 
     1. If we have only 2 labels, it can be defined by the bigger ratio of conditional probabilities of this feature given tags.
         
-        $$
-        pdtn(label_1, label_2) = arg max\left( \frac{p(word|label_1)}{p(word|label_2)}, \frac{p(word|label_2)}{p(word|label_1)}\right)
-        $$
+        <a href="http://www.codecogs.com/eqnedit.php?latex=pdtn(label_1,&space;label_2)&space;=&space;arg&space;max\left(&space;\frac{p(word|label_1)}{p(word|label_2)},&space;\frac{p(word|label_2)}{p(word|label_1)}\right)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?pdtn(label_1,&space;label_2)&space;=&space;arg&space;max\left(&space;\frac{p(word|label_1)}{p(word|label_2)},&space;\frac{p(word|label_2)}{p(word|label_1)}\right)" title="pdtn(label_1, label_2) = arg max\left( \frac{p(word|label_1)}{p(word|label_2)}, \frac{p(word|label_2)}{p(word|label_1)}\right)" /></a>
 
     \*Note that this measure is symmetric. In other words, how much a feature can distinguish label 1 from label 2 is the same as how much it can distinguish label 2 from label 1.
         
     2. When we have more than 2 labels, we can take the average of the predictivenesses of all label combinations.
         
-        $$
-        pdtn(label_1, label_2, label_3) = \frac{pdtn(label_1, label_2) + pdtn(label_1, label_3) + pdtn(label_2, label_3)}{3}
-        $$
+        <a href="http://www.codecogs.com/eqnedit.php?latex=pdtn(label_1,&space;label_2,&space;label_3)&space;=&space;\frac{pdtn(label_1,&space;label_2)&space;&plus;&space;pdtn(label_1,&space;label_3)&space;&plus;&space;pdtn(label_2,&space;label_3)}{3}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?pdtn(label_1,&space;label_2,&space;label_3)&space;=&space;\frac{pdtn(label_1,&space;label_2)&space;&plus;&space;pdtn(label_1,&space;label_3)&space;&plus;&space;pdtn(label_2,&space;label_3)}{3}" title="pdtn(label_1, label_2, label_3) = \frac{pdtn(label_1, label_2) + pdtn(label_1, label_3) + pdtn(label_2, label_3)}{3}" /></a>
 
     3. At last this predictiveness of feature word should be weighted by the count of this word. The more frequent this word appears, the more reliable this predictiveness is.
 
-    $$pdtn = pdtn \times count$$
+    <a href="http://www.codecogs.com/eqnedit.php?latex=pdtn&space;=&space;pdtn&space;\times&space;count" target="_blank"><img src="http://latex.codecogs.com/gif.latex?pdtn&space;=&space;pdtn&space;\times&space;count" title="pdtn = pdtn \times count" /></a>
 
     ```python
     >>> Input:
